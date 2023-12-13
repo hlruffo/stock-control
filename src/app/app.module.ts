@@ -26,6 +26,7 @@ import { HomeComponent } from './modules/home/home.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     //PrimeNG
     CardModule,
     InputTextModule,
