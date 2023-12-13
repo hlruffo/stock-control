@@ -14,7 +14,7 @@ import { ToastModule } from 'primeng/toast'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/home/home.component';
-
+import { CookieService }  from 'ngx-cookie-service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +26,14 @@ import { HomeComponent } from './modules/home/home.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
     //PrimeNG
     CardModule,
     InputTextModule,
     ButtonModule,
     ToastModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
