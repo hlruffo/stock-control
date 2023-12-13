@@ -4,6 +4,7 @@ import { UserService } from './../../services/user/user.service';
 import { SingUpUserRequest } from '../../../models/interfaces/user/SingUpUserRequest'
 import { AuthRequest } from './../../../models/interfaces/user/auth/authRequest';
 import { CookieService } from 'ngx-cookie-service';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -27,6 +28,7 @@ export class HomeComponent {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private cookieService: CookieService,
+    private messageService: MessageService
     ) {};
 
   onSubmitLoginForm(): void {
@@ -37,9 +39,23 @@ export class HomeComponent {
           if(response){
             this.cookieService.set('USER_INFO', response?.token);
             this.loginForm.reset();
+
+            this.messageService.add({
+              severity:'sucess',
+              summary:'Sucesso',
+              detail: `Bem vindo de volta ${response?.name}!`,
+              life:2000,
+            });
           }
         },
-        error:(error)=>console.log(error),
+        error:(error)=>{
+          this.messageService.add({
+          severity:'error',
+          summary:'Erro',
+          detail: 'Erro ao realizar login.',
+          life:2000,
+        });},
+
       });
     }
   };
@@ -53,9 +69,20 @@ export class HomeComponent {
             alert('Usuário cadastrado com sucesso!');
             this.signUpForm.reset();
             this.loginCard = true;
+
+            this.messageService.add({
+              severity:'sucess',
+              summary:'Sucesso',
+              detail: `Usuário ${response?.name} cadastrado com sucesso!`,
+              life:2000,
+            });
           }
         },
-        error:(error) => console.log(error),
+        error:(error) => {this.messageService.add({
+          severity:'error',
+          summary:'Erro',
+          detail: 'Erro ao cadastrar usuário.',
+          life:2000,})},
       });
     }
   };
