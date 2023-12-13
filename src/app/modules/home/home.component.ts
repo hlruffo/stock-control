@@ -11,13 +11,13 @@ export class HomeComponent {
 
   loginForm = this.formBuilder.group({
     email: ['', Validators.required],
-    senha: ['', Validators.required],
+    password: ['', Validators.required],
   });
 
   signUpForm = this.formBuilder.group({
-    nome: ['', Validators.required],
+    name: ['', Validators.required],
     email: ['', Validators.required],
-    senha: ['', Validators.required]
+    password: ['', Validators.required]
   })
 
   constructor(private formBuilder: FormBuilder) {

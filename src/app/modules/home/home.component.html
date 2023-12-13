@@ -8,15 +8,14 @@
             <input type="email" pInputText placeholder="Email" formControlName="email">
           </div>
           <div class="flex justify-content-center align-center text-align-center mt-3">
-            <input type="password" pInputText placeholder="Senha" formControlName="senha">
+            <input type="password" pInputText placeholder="password" formControlName="password">
           </div>
           <div class="card flex justify-content-center mt-3">
             <button type="submit" pButton pRipple label="Login" [disabled]="!this.loginForm.valid"></button>
           </div>
           <span
             class="flex justify-content-center align-content-center text-align-center mt-3 text-red-600 font-semibold"
-            style="cursor: pointer;"
-            (click)="loginCard = !loginCard">
+            style="cursor: pointer;" (click)="loginCard = !loginCard">
             Criar Conta
           </span>
         </p-card>
@@ -26,21 +25,20 @@
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmitsignUpForm()">
         <p-card *ngIf="!loginCard" styleClass="mt-10" header="Criar Conta" subheader="Crie já sua conta gratuita.">
           <div class="flex justify-content-center align-center text-align-center">
-            <input type="text" pInputText placeholder="Nome" formControlName="nome">
+            <input type="text" pInputText placeholder="name" formControlName="name">
           </div>
           <div class="flex justify-content-center align-center text-align-center mt-3">
             <input type="email" pInputText placeholder="Email" formControlName="email">
           </div>
           <div class="flex justify-content-center align-center text-align-center mt-3">
-            <input type="password" pInputText placeholder="Senha" formControlName="senha">
+            <input type="password" pInputText placeholder="password" formControlName="password">
           </div>
           <div class="card flex justify-content-center mt-3">
             <button type="submit" pButton pRipple label="Criar conta" [disabled]="!this.signUpForm.valid"></button>
           </div>
           <span
             class="flex justify-content-center align-content-center text-align-center mt-3 text-red-600 font-semibold"
-            style="cursor: pointer;"
-            (click)="loginCard = !loginCard">
+            style="cursor: pointer;" (click)="loginCard = !loginCard">
             Fazer login
           </span>
         </p-card>

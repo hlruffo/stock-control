@@ -1,5 +1,5 @@
-export interface SingUpUserRequest{
-  nome: string;
+export interface SingUpUserRequest {
+  name: string;
   email: string;
-  senha: string;
+  password: string;
 }
