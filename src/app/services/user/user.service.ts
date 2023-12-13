@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/enveironment';
-import { SingUpUserRequest } from './../../../models/interfaces/user/signUpUserRequest';
+import { SingUpUserRequest } from '../../../models/interfaces/user/SingUpUserRequest';
 import { SignUpUserResponse } from './../../../models/interfaces/user/singUpUserResponse';
 import { AuthRequest } from './../../../models/interfaces/user/auth/authRequest';
 import { AuthResponse } from 'src/models/interfaces/user/auth/authResponse';
